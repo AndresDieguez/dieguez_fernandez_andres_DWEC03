@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida - Juego</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="bienvenida">
+    <main>
+        <div class="bienvenida-container slide-in-elliptic-top-fwd">
+            <img src="../media/imagenes/letras.png" alt="logo Arcanoid">
+    
+            <!-- Instrucciones del Juego -->
+            <div id="textos-bienvenida">
+                <h1>Bienvenido <strong id="user-nombre">usuario</strong></h1>
+                <h2>Descripción</h2>
+                <div class="descripcion">                   
+                    <p>En Arcanoid, una capa de ladrillos cubre el tercio superior de la pantalla y el objetivo es destruirlos todos haciendo rebotar repetidamente una pelota desde una paleta hacia ellos </p>               
+                </div>
+                <h3>Instrucciones de juego</h3>
+                <div id="instrucciones">                   
+                    <p>Ganarás el juego si destruyes todos los ladrillos antes de que se acabe el tiempo y antes de perder todas las vidas que se te ofrecen </p>
+                    <p>Perderas una vida si no logras golpear la bola  con la paleta y que se cuele por debajo de esta.</p>
+                    <p>Hay tres niveles de dificultad. El nivel de dificultad influye en las vidas que tienes, el número de bloques a destruir y la velocidad de la bola</p>
+                    <p>Cada ladrillo que rompas obtendras una puntuación que se irá sumando. Ademas los ladrillos rojos ofrecen una puntuacion de 50 puntos por ladrillo, los amarillos de 10,  los verdes de 20 y los narajas de 30</p>
+                    <p>Puedes mover la paleta a izquierda y derecha desplanzando el raton.</p>
+                    <p>Para ello el puntero del raton debe estar colocado siempres sobre la zona de juego, si no perderas el control de la paleta y podras voler a recuperarlo colocandote en la zona de juego</p>
+                    <p>Para sotar las bolas haz click en el boton izquierdo del ratón</p>
+                    <p>Activa el audio de tu ordenador y la musica te ayudar a saber cuando quedan te pocos segundos para que el juego termine</p>
+                </div>
+                <button id="mostrarInstrucciones">¿No sabes cómo Jugar?: haz clic aquí</button>               
+            </div>
+    
+            <!-- Selección de Nivel -->
+            <h3>Selecciona un nivel de dificultad:</h3>
+            <select id="nivel">
+                <option value="principiante">Principiante</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+            </select>
+    
+            <!-- Botón de inicio -->
+            <button id="comenzarJuego">Comenzar Juego</button>   
+        </div>
+        <video src="../media/video/bienvenidos.mp4" autoplay muted loop>
+            Tu navegador no soporta el elemento <code>video</code>. Actualízalo para reproducir este contenido multimedia.
+        </video>
+    </main>
+    <script src="../js/bienvenida.js"></script>
+</body>
+</html>

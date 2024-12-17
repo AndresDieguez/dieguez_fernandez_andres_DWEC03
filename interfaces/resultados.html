@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Juego</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body class="resultados">
+  <main>
+    <p id="game-over">GAME OVER</p>
+    <div class="resultados-container">
+      <h1 id="mensajeResultados">Gracias por jugar</h1>
+        <h2>Resultados de <strong id="user-nombre">usuario</strong></h2>
+        <!-- Resumen del desempeño -->
+        <div id="resumenDesempeño">
+            <p>Puntuación final: <span id="puntuacionFinal">0</span></p>
+        </div>
+
+        <!-- Opciones -->
+        <div class="opciones">
+            <button id="reiniciarJuego">Reiniciar Juego</button>
+            <button id="salirLogin">Salir al Login</button>
+        </div>
+    </div>
+    <video src="../media/video/red.mp4" autoplay muted loop>
+      Tu navegador no soporta el elemento <code>video</code>. Actualízalo para reproducir este contenido multimedia.
+    </video>
+  </main>
+    <script src="../js/resultados.js"></script>
+</body>
+</html>

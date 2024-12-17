@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Breakout HTML Game</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/estilos-juego.css">
+</head>
+<body class="juego">
+    <audio id="musica" src="../media/sonido/music.mp3" preload="auto"></audio>
+        <!-- Zona de Información -->
+        <div id="informacion">
+            <p>Tienes 100 segundos</p>
+            <p>Pulsa botón jugar cuando estes preparado, el tiempo empezará a descender</p>
+            <p>Coloca el puntero del raton siempre en la zona de juego y podrás desplazar la paleta</p>
+            <p>Haz clic con el ratón para soltar la bola</p>
+            <p>SUERTE!!!!!</p>
+            <button id="iniciarJuego">JUGAR</button>           
+        </div>
+        
+    <img class="heartbeat" src="../media/imagenes/letras.png" alt="">
+
+    <p><span id="tiempoRestante">100</span></p>
+
+    <canvas width="400" height="500" id="game"></canvas>
+    <video src="../media/video/psicodelico.mp4" autoplay muted loop>
+        Tu navegador no soporta el elemento <code>video</code>. Actualízalo para reproducir este contenido multimedia.
+    </video>
+        
+    </video>
+<script src="../js/game.js"></script>
+</body>
+</html>

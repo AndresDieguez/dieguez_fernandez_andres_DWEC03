@@ -1,0 +1,150 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+canvas {
+    background-color: black;
+}
+
+#game {
+    margin-top: -51px;
+    cursor: w-resize;
+}
+
+img {
+    max-width: 25%;
+    width: 100%;
+    height: auto;
+}
+
+.heartbeat {
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite 5s both;
+    animation: heartbeat 1.5s ease-in-out infinite 5s both;
+}
+
+/**
+* ----------------------------------------
+* animation heartbeat
+* ----------------------------------------
+*/
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+/* Estilos del temporizador */
+#tiempoRestante {
+    font-size: 48px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6347; /* Color vibrante para el temporizador */
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    min-width: 80px;
+    position: relative;
+    z-index: 99999;
+    text-align: center;
+}
+
+#tiempoRestante.comienza {
+    animation: pulsar 1s infinite; /* Animación que hace pulsar el temporizador */
+    background-color: #ff8400; /* Color original */
+}
+
+
+/* Estilo para cuando el tiempo está por agotarse */
+#tiempoRestante.low-time {
+    background-color: red; /* Rojo fuerte para advertir de poco tiempo */
+    box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+    animation: pulsar 0.3s infinite;
+}
+
+/* Animación pulsante para dar un efecto visual */
+@keyframes pulsar {
+    0% {
+        transform: scale(1);       
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #ff6347; /* Color al máximo */
+    }
+    100% {
+        transform: scale(1);
+        background-color: #ff8400; /* Color original */
+    }
+}

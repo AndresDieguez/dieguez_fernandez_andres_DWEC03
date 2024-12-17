@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+body {
+    font-family: Arial, sans-serif;
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;*/
+    margin: 0;
+    background-color: #000;
+}
+
+img.logoinicio {
+    max-width: 300px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    /*min-width: 100%;
+    min-height: 100%;*/
+    height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
+}
+
+p#game-over {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4em;
+    text-align: center;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    max-width: 990px;
+    margin: 0px auto;
+}
+
+@keyframes example {
+    0% {
+        color: lime;
+        text-shadow: 0 0 20px green;
+    }
+    25% {
+        color: green;
+        text-shadow: 2px 2px 2px lime;
+        transform: translate(-2px, 1px);
+    }
+    40% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0);
+    }
+    50% {
+        color: green;
+        text-shadow: 5px 5px 2px blue, -5px -5px 2px red;
+        transform: translate(0px, 5px);
+    }
+    70% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0);
+    }
+    80% {
+        color: lime;
+        text-shadow: 0 0 20px green;
+        transform: translate(-2px, 1px);
+    }
+    100% {
+        color: lime;
+        text-shadow: none;
+    }
+}
+
+.slide-in-elliptic-top-fwd {
+	-webkit-animation: slide-in-elliptic-top-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+	        animation: slide-in-elliptic-top-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1s both;
+}
+
+@-webkit-keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+@keyframes slide-in-elliptic-top-fwd {
+    0% {
+        -webkit-transform: translateY(-600px) rotateX(-30deg) scale(0);
+        transform: translateY(-600px) rotateX(-30deg) scale(0);
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: translateY(0) rotateX(0) scale(1);
+        transform: translateY(0) rotateX(0) scale(1);
+        -webkit-transform-origin: 50% 1400px;
+        transform-origin: 50% 1400px;
+        opacity: 1;
+    }
+}
+
+.inicio main,
+.resultados main,
+.bienvenida main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.resultados main {
+    flex-direction: column;
+}
+
+.inicio label {
+    text-align: left;
+}
+
+.resultados,
+.inicio {
+    background: black;
+}
+
+.login-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#mensaje {
+    margin-top: 10px;
+}
+
+.bienvenida-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+
+/* Asegúrate de que las instrucciones estén inicialmente ocultas */
+#instrucciones { 
+    
+    opacity: 0;
+    border-radius: 12px;
+    padding:0;
+    text-align: justify;
+    max-height: 0; /* Al principio, el contenido está oculto */
+    overflow: hidden; /* No se muestra el contenido que sobrepasa la altura */
+    transition: 1s ease-out; /* Transición suave */
+}
+
+
+/* Cuando se muestre, la altura se ajusta */
+#instrucciones.mostrar {
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    max-height: 1000px; 
+    border: 1px solid #e1e1e1;
+    background: #eee;
+    opacity: 1; 
+    
+}
+.seleccion-nivel {
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/*juego*/
+
+/* Contenedor de bienvenida */
+.bienvenida-container,
+.juego-container {
+    padding: 20px;
+}
+
+/* Estilos del contenedor de la zona de información */
+#informacion {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    background-color: #000000e5;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 9999999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.resultados-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.resultados-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+#resumenDesempeño {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.opciones button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reiniciarJuego {
+    background-color: #4caf50;
+    color: white;
+}
+
+#reiniciarJuego:hover {
+    background-color: #45a049;
+}
+
+#salirLogin {
+    background-color: #f44336;
+    color: white;
+}
+
+#salirLogin:hover {
+    background-color: #d32f2f;
+}
+
+#puntuacion {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid;
+    box-shadow: 2px 2px 2px gray;
+}
