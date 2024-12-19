@@ -186,22 +186,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
  
     // segun la dificulatad seleccionada pintamos el numero de bloques, velocidad de la bola y damos vidas
+    // si el refresco de tu monitor es alto (>60 hz) modifica los valores de bola.speed para que vaya mas lenta
     switch (nivelSeleccionado) {
         case "principiante":
             nivel1.splice(6, 1);
             nivel1.splice(7, 1);
             nivel1.splice(8, 1);
             nivel1.splice(9, 1);
-            bola.speed = 1.5;
+            bola.speed = 4;
             vidas = 5;
             break;
         case "intermedio":
             nivel1.splice(8, 2, [], []);
-            bola.speed = 2.1;
+            bola.speed = 4.5;
             vidas = 3;
             break;
         case "avanzado":
-            bola.speed = 2.4;
+            bola.speed = 5;
             vidas = 2;
             break;
         default:
@@ -415,6 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Redirigir al resultados cuando se agote el tiempo, vidas a cero o no haya ladrilos...
+            // Si ha ganado lo guardamos en el localStorage y sacaremos el mensaje de victoria en vez de Game Over
             if (tiempoRestante <= 0 || ladrillosArray.length === 0 || vidas === 0 ) {
                 cancelAnimationFrame(animacion);
                 clearInterval(temporizador);
