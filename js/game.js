@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "../interfaces/bienvenida.html";
     }
 
+    // DEFINIMOS VARIABLES
     const canvas = document.getElementById("game");
     const context = canvas.getContext("2d");
-    // context.shadowColor = "black";
-    // context.shadowBlur = 15;
 
     const pelotaImagen = new Image();
     pelotaImagen.src = "../media/imagenes/bola.png"; // Carga la imagen de la bola
@@ -102,6 +101,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonIniciar = document.getElementById("iniciarJuego");
     const musica = document.getElementById("musica"); // Obtener el elemento de audio
 
+
+    // FUNCIONES
     // Una vez que la imagen esté cargada, crea el patrón
     muroImagen.onload = function () {
         muroPattern = context.createPattern(muroImagen, "repeat");
@@ -185,31 +186,6 @@ document.addEventListener("DOMContentLoaded", function () {
             );
     }
  
-    // segun la dificulatad seleccionada pintamos el numero de bloques, velocidad de la bola y damos vidas
-    // si el refresco de tu monitor es alto (>60 hz) modifica los valores de bola.speed para que vaya mas lenta
-    switch (nivelSeleccionado) {
-        case "principiante":
-            nivel1.splice(6, 1);
-            nivel1.splice(7, 1);
-            nivel1.splice(8, 1);
-            nivel1.splice(9, 1);
-            bola.speed = 4;
-            vidas = 5;
-            break;
-        case "intermedio":
-            nivel1.splice(8, 2, [], []);
-            bola.speed = 4.5;
-            vidas = 3;
-            break;
-        case "avanzado":
-            bola.speed = 5;
-            vidas = 2;
-            break;
-        default:
-            console.log("no se ha seleccionado nivel ");
-            break;
-    }
-
     // creamos el nivel de ladrillos, colores, puntuacion de cada ladrillo
     function crearnivel() {
         for (let row = 0; row < nivel1.length; row++) {
@@ -226,10 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
-    crearnivel();
-    //console.log(ladrillosArray);
-
+ 
     // dibujar los elementos del juego, paredes ladrillos bola paleta y marcadores
 
     function dibujarBorde() {
@@ -330,9 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
         */
         requestAnimationFrame(animacion); 
     }
-    
-    // Iniciar la animación
-    animacion();
 
     function controles() {
         // movemos la paleta con el mouse, La paleta se moverá con el ratón mientras permanezca dentro del área del canvas.
@@ -357,18 +327,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
   
-
-    // Reproducir música cuando el usuario haga clic en el botón jugar e iniciar el juego
-    botonIniciar.addEventListener("click", function () {
-        musica.play().catch((error) => {
-            console.log("El audio no se ha podido reproducir: ", error);
-        });
-        // ocultamos el boton y textos
-        cuadroIniciar.style.display = "none";
-        // Iniciar el juego
-        juguemos();
-    });
-
     // Función que inicia el juego, activa el temporizador y crea ciertos eventos durante el juego y lo finaliza
     function juguemos() {
         // activamos los controles de la paleta con el mouse y sacar con click del mouse
@@ -428,4 +386,46 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }, 1000);
     }
+
+    // segun la dificulatad seleccionada pintamos el numero de bloques, velocidad de la bola y damos vidas
+    // si el refresco de tu monitor es alto (>60 hz) modifica los valores de bola.speed para que vaya mas lenta
+    switch (nivelSeleccionado) {
+        case "principiante":
+            nivel1.splice(6, 1);
+            nivel1.splice(7, 1);
+            nivel1.splice(8, 1);
+            nivel1.splice(9, 1);
+            bola.speed = 4;
+            vidas = 5;
+            break;
+        case "intermedio":
+            nivel1.splice(8, 2, [], []);
+            bola.speed = 4.5;
+            vidas = 3;
+            break;
+        case "avanzado":
+            bola.speed = 5;
+            vidas = 2;
+            break;
+        default:
+            console.log("no se ha seleccionado nivel ");
+            break;
+    }
+    crearnivel();
+    //console.log(ladrillosArray);
+    
+    // Iniciar la animación
+    animacion();
+      
+    // Reproducir música cuando el usuario haga clic en el botón jugar e iniciar el juego
+    botonIniciar.addEventListener("click", function () {
+        musica.play().catch((error) => {
+            console.log("El audio no se ha podido reproducir: ", error);
+        });
+        // ocultamos el boton y textos
+        cuadroIniciar.style.display = "none";
+        // Iniciar el juego
+        juguemos();
+    });
+
 });
